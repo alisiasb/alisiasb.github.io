@@ -1,0 +1,125 @@
+
+<center><h1>The Top 5 of My Bestie </h1></center>
+<hr>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+  body {
+    font-family: "serif;";
+    font-size: 50pxpx;
+    background-color: burlywood;
+  }
+  tr {
+    background: saddlebrown;
+    padding: 2px solid;
+    text-align: center;
+  }
+  td {
+    background: saddlebrown;
+    cursor: pointer;
+    transition: .5s;
+    padding: 2px solid;
+    text-align: center;
+  }
+  td:hover {
+    background: whitesmoke;
+  }
+  .tabelsaya {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+  }
+
+</style>
+
+<table class="tabelsaya">
+  <tr>
+    <th>No</th>
+    <th>Nama</th>
+    <th>Alamat</th>
+    <th >Aksi</th>
+  </tr>
+  <tr id="row__1">
+    <td>1</td>
+    <td class="nama">Ainun Putri</td>
+    <td class="alamat">Plumbon</td>
+    <td class="hapus" id="hapus__1">Hapus</td>
+  </tr>
+  <tr id="row__2">
+    <td>2</td>
+    <td class="nama">Juhartini</td>
+    <td class="alamat">Ciperna</td>
+    <td class="hapus" id="hapus__2">Hapus</td>
+  </tr>
+  <tr id="row__3">
+    <td>3</td>
+    <td class="nama">Kayla Shafa</td>
+    <td class="alamat">Plumbon</td>
+    <td class="hapus" id="hapus__3">Hapus</td>
+  </tr>
+  <tr id="row__4">
+    <td>4</td>
+    <td class="nama">Novi Rohayati</td>
+    <td class="alamat">Gunung Jati</td>
+    <td class="hapus " id="hapus__4">Hapus</td>
+  </tr>
+  <tr id="row__5">
+    <td>5</td>
+    <td class="nama">Vera Vibrianti</td>
+    <td class="alamat">Perum</td>
+    <td class="hapus" id="hapus__5">Hapus</td>
+  </tr>
+</tr>
+</table>
+
+<script>
+  $(document).ready(function(){
+     // alert(0)
+    $('.nama').click(function(){
+      // alert(1)
+      let isi = $(this).text();
+      // alert(isi);
+      let isi2 = prompt('Apakah anda yakin ingin mengubahnya?:',isi);
+      if(!isi2) return;
+      // alert(isi2);
+
+      $(this).text(isi2);
+    })
+ 
+    $('.alamat').click(function(){
+     // alert(1)
+     let isi = $(this).text();
+     // alert(isi);
+     let isi2 = prompt('Apakah anda yakin ingin mengubahnya?:',isi);
+     if(!isi2) return;
+     // alert(isi2);
+
+     $(this).text(isi2);
+    })
+
+
+    $('.hapus').click(function(){
+      // alert(1)
+     let ya = confirm('Apakah anda yakin ingin menghapusnya?jika YA klik OK');
+     if(!ya) return;
+
+     let id = $(this).prop('id');
+     // alert(id);
+
+
+     let rid = id.split('__');
+     let baris_ke = rid[1];
+
+     // alert(baris_ke);
+
+     $('#row__'+baris_ke).slideUp()
+
+
+
+     // alert('Anda Yakin')
+  
+
+    })
+
+  })
+</script>
